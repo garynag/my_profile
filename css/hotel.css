@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: #222222;
+}
+/* topmenu */
+.menubars {
+    display: none;
+    font-size: 30px;
+    padding: 0 30px 20px;
+}
+.topmenu {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+.topmenu a {
+    position: relative;
+    padding-bottom: 5px;
+}
+.topmenu a::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    content: '';
+    border-bottom: 1px solid #fff;  
+    transform: scaleX(0);  
+    transition: transform 300ms ease-in-out;
+    transform-origin:  0% 0%;
+}
+.topmenu a:hover::after { transform: scaleX(1); }
+
+.section {
+    padding: 0 120px;
+}
+h1 {
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 400;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 40px;
+}
+.main {
+    text-align: center;
+    animation: fadein 2s;
+}
+.main img {
+    max-width: 100%;
+}
+@keyframes fadein { 
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1680px;
+    max-width: 100%;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 200px;
+    font-weight: 400;
+}
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 700px;
+    max-width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+h2::after {
+    content: '';
+    display: inline-block;
+    width: 700px;
+    max-width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+
+/* special 영역 */
+.special {
+    display: flex;
+    width: 1200px;
+    max-width: 100%;
+    justify-content: center;
+    margin: 100px auto 0;
+    position: relative;
+}
+.special-left {
+    font-size: 0;
+}
+.special-left {
+    position: relative;
+    flex: 1;
+}
+.special-left a {
+    display: inline-block;
+}
+.special-left img {
+    width: 100%;
+}
+.special-left a {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.special-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+} 
+.special-right a {
+    display: inline-block;
+    height: 100%;
+    background-color: #444;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+.special-right li:first-child {
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+}
+.special-right li:nth-child(2) {
+    border-bottom: 1px solid #777;
+}
+.special-right li:nth-child(3) {
+    border-right: 1px solid #777;
+}
+.special-right span {
+    color: #aaa;
+    transition: 0.5s;
+
+}
+.read {
+    padding: 5px 20px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.special-right a.on {
+    background-color: #182154;
+}
+.special-right a.on span {
+    color: #fff; 
+}
+.special-right a.on .read {
+    color: #222222;
+     background-color: #fff;
+}
+
+/* room 영역 */
+.tabmenu {
+    width: 1000px;
+    max-width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+.tabmenu>a span {
+    position: relative;
+}
+.tabmenu a::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background-color: #fff;
+    margin: 0 25px 0 20px;
+}
+.tabmenu a:first-child::before {
+    display: none;
+}
+.tabmenu>a span::after {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    display: block;
+    content: '';
+    border-bottom: 1px solid #fff;  
+    transform: scaleX(0);  
+    transition: transform 300ms ease-in-out;
+    transform-origin:  0% 0%;
+}
+.tabmenu>a span:hover::after { transform: scaleX(1); }
+
+.tab-room {
+    position: relative;
+}
+.rooms {
+    display: flex;
+    justify-content: center;
+    font-size: 0;
+    margin-top: 100px;
+    width: 1200px;
+    max-width: 100%;
+    margin: 100px auto 0;
+}
+.room-left {
+    flex: 1;
+}
+.room-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    max-width: 100%;
+}
+.room-right>div {
+    flex: 1;
+}
+.rooms img {
+    width: 100%;
+}
+.room-txt a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #182154;
+    position: relative;
+}
+.roomtype {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 16px;
+    animation: fadeup 1s;
+}
+.room-txt span:first-child {
+    font-size: 18px;
+    font-weight: 700;
+}
+.room-txt span:last-child {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+@keyframes fadeup {
+    0% {
+        opacity: 0;
+        bottom: -50px;
+    }
+    100% {
+        opacity: 1;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}
+
+
+
+/* dining 영역 */
+.diningslide-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 100px;
+}
+.dining-title {
+    margin: 200px auto 0;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    position: static;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #182154;
+    margin-top: 0;
+} 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 25px;
+    color: #fff;
+}
+.swiper-btns {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1300px;
+    max-width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.diningslide {
+    transform: translateX(20vw);
+    width: 1500px;
+    max-width: 100%;
+}
+.diningslide img {
+    width: 90%;
+}
+.swiper-slide-active {
+    width: 100%;
+}
+
+/* banner */
+.banner {
+    margin: 200px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.banner img {
+    filter: grayscale(0.8);
+    transition: 0.5s;
+}
+.banner h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 8px;
+    font-size: 24px;
+    font-weight: 900;
+    transition: 0.5s;
+    z-index: 1000;
+}
+.banner button {
+    position: absolute;
+    transition: 0.5s;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    padding: 5px 80px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.banner:hover h3 {
+    transform: translate(-50%, -50%) scale(1.5);
+    letter-spacing: 10px;
+}
+.banner:hover img {
+    filter: grayscale(0);
+}
+.banner:hover button {
+    display: block;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* notice */
+.notice {
+    margin-bottom: 150px;
+    padding: 0 120px;
+}
+.notice h3 {
+    font-size: 24px;
+    font-weight: 400;
+}
+.notice-list {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* footer */
+footer {
+    background-color: #444;
+    padding: 80px 120px;
+    position: relative;
+}
+footer h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-family: "Inknut Antiqua", serif;
+    font-weight: 400; 
+}
+.footer-menu {
+    display: flex;
+    justify-content: center;
+}
+.footer-menu li {
+    transition: 0.3s;
+}
+.footer-menu li::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background-color: #fff;
+    margin: 0 50px;
+}
+.footer-menu li:last-child::after {
+    display: none;
+}
+.footer-menu li:hover {
+    opacity: 0.7;
+}
+.portfolio {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media (max-width: 1700px) {
+    .topmenu {
+        padding: 0 60px;
+    }
+    .section {
+        padding: 0 60px;
+    }
+    h2::before {
+        flex: 1;
+        margin-right: 20px;
+    }
+    h2::after {
+        flex: 1;
+        margin-left: 20px;
+    }
+    .dining-title {
+        padding: 0 60px;
+    }
+}
+@media (max-width: 1350px) {
+    .dining-title {
+        padding: 0 60px;
+    }
+    .special-right span {
+        font-size: 14px;
+    }
+    .roomtype {
+        gap: 20px;
+    }
+    .room-txt span:first-child {
+        font-size: 16px;
+    }
+    .room-txt span:last-child {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .swiper-btns {
+        width: 1100px;
+    }
+    .notice {
+        font-size: 14px;
+    }
+    footer h3 {
+        position: static;
+    }
+}
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        margin-top: 150px;
+    }
+    .topmenu {
+        padding: 0 30px;
+    }
+    .section {
+        padding: 0 30px;
+    }
+    .topmenu a {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+    .special-right a {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .special-right span {
+        font-size: 13px;
+    }
+    .read {
+        padding: 5px 10px;
+    }
+    .dining-title {
+        padding: 0 30px;
+        margin-top: 150px;
+    }
+    .tabmenu span {
+        font-size: 14px;
+    }
+    .room-txt span {
+        padding: 0 10px;
+    }
+    .room-txt span:first-child {
+        font-size: 14px;
+    }
+    .room-txt span:last-child {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+    .swiper-btns {
+        width: 800px;
+    }
+    .banner {
+        margin: 150px 0;
+    }
+    .banner h3 {
+        font-size: 18px;
+    }
+    .banner:hover h3 {
+        transform: translate(-50%, -50%) scale(1.5);
+        letter-spacing: 8px;
+    }    
+    .notice-list>div:last-child {
+        display: none;
+    }
+    footer {
+        padding: 10px 30px;
+    }
+    .portfolio {
+        margin-top: 30px;
+    }
+    .footer-menu>li::after {
+        margin: 0 25px;
+    }
+    footer {
+        padding-top: 50px;
+    }
+}
+@media (max-width: 600px) {
+    h1 {
+        padding: 30px 0;
+    }
+    h2 {
+        margin-top: 100px;
+        font-size: 18px;
+    }
+    .topmenu {
+        margin-bottom: 50px;
+    }
+    .topmenu a {
+        font-size: 14px;
+    }
+    .special {
+        flex-direction: column;
+    }
+    .special-right a {
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .tabmenu {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px auto;
+    }
+    .tabmenu a::before {
+        display: none;
+    }
+    .tabmenu a::after {
+        display: none;
+    }
+    .rooms {
+        flex-direction: column;
+    }
+    .room-right {
+        flex-direction: column-reverse;
+    }
+    .room-txt a {
+        padding: 80px 0;
+    }
+    .swiper-btns {
+        gap: 5px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        font-size: 18px;
+    }
+    .banner {
+        margin: 100px 0;
+        height: 200px;
+    }
+    .banner img {
+        height: 100%;
+    }
+    .banner h3 {
+        font-size: 20px;
+    }
+    .banner:hover h3 {
+        transform: translate(-50%, -50%) scale(1.3);
+        letter-spacing: 8px;
+    }
+    .banner button {
+        position: absolute;
+        transition: 0.5s;
+        opacity: 0;
+        padding: 5px 30px;
+        border-radius: 5px;
+        font-size: 18px;
+    }   
+    .banner:hover button {
+        display: block;
+        opacity: 1;
+        bottom: 20px;
+    }     
+    .notice h3 {
+        font-size: 18px;
+    }
+    .notice-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-title {
+        text-align: center;
+    }
+    .footer-menu {
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-menu li::after {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    h2 {
+        margin-top: 50px;
+    }
+    .topmenu {
+        display: none;
+    }
+    .menubars {
+        display: block;
+    }
+    .main {
+        padding: 0;
+    }
+    .special {
+        margin-top: 50px;
+    }
+    .diningslide-wrapper {
+        margin-top: 50px;
+    }
+    .banner {
+        margin: 50px 0;
+    }
+    .notice {
+        margin-bottom: 50px;
+    }
+    .notice-list {
+        margin-top: 30px;
+    }
+    .rooms {
+        margin-top: 50px;
+    }
+    .dining-title {
+        margin-top: 50px;
+    }
+    .footer-menu {
+        margin-top: 0;
+    }
+}
